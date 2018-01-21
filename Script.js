@@ -625,4 +625,47 @@ var person = {
 person.age += 1;
 
 person["city"] = "London";
-"London"
+"London"   
+
+
+// Hopelessly failing at below task.
+function findShort(s){
+    var answer = 0;
+    for (var i = 0; i < s.length; i++) {
+    if (s[i] === " ") {
+    answer = i - 1; 
+
+    }
+    
+    }
+    
+    }
+    findShort("bitcoin take over the world maybe who knows perhaps ");
+
+
+    function wordCount(str) { 
+        var words = str.split(" ");
+      str.forEach(function(i) {
+          console.log(str[i]);
+      });
+    }
+
+    wordCount("hello to the world")
+    
+
+
+
+
+    // CODE TAKEN FROM NET / "locate the smallest word in a string"
+
+    function WordCount(str) { 
+        var words = str.split(" ");
+        var sortedWords = words.sort(function(a,b) {
+            if(a.length<b.length) return -1;
+            else if(a.length>b.length) return 1;
+            else return 0;
+        });
+       return sortedWords[0].length;             // remove .length to return the word itself
+    }
+    
+    console.log(WordCount("hello to the world"));
