@@ -690,11 +690,15 @@ var arr = [
                     Rating: 2,
                     Watched: true},
 
+                    {Name: "nanana", 
+                    Rating: 7,
+                    Watched: true},
+
     ]
 
 // LOOPING THROUGH AN ARRAY OF OBJETCS
+function buildString(movie) {
 
-arr.forEach(function(movie){
     var result = " You have ";
     if (movie.Watched) {
         result += "watched ";
@@ -704,6 +708,47 @@ arr.forEach(function(movie){
     }
     result += "\"" + movie.Name + "\"";
     result += " which has a " + movie.Rating + " star rating";
-console.log(result)
-    });
+    return result; // entire string is put together in return
+    
+}
 
+arr.forEach(function(movie) {
+    console.log(buildString(movie));//function can be put inside 
+                                    //the console log as it's been
+                                    // returned in the function
+   
+});
+
+
+
+
+
+
+
+
+// PRACTICE OF ABOVE EXERCISE 
+
+arr.forEach(function(i) {
+console.log(movies(i));
+})
+
+
+
+
+function movies(i) {
+    var result = "";
+if (i.Watched) {
+    result += "I have seen the movie ";
+}
+else {
+    result += "I have not seen the movie "
+}
+   result += "\"" + i.Name + "\"" 
+if (i.Rating < 3) {
+    result += " the ratings sucked"
+}
+else {
+    result += " It got a rating of " + i.Rating;
+}
+  return result;
+}
