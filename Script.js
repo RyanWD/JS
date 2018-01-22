@@ -669,3 +669,41 @@ function findShort(s){
     }
     
     console.log(WordCount("hello to the world"));
+
+// MOVIE DATABSE EXERCISE
+//ARRAY-> OBJECT
+var arr = [
+
+                    {Name: "In Bruges", 
+                    Rating: 5,
+                    Watched: true},
+
+                    {Name: "Frozen", 
+                    Rating: 4.5,
+                    Watched: false},
+
+                    {Name: "Mad Max", 
+                    Rating: 2,
+                    Watched: true},
+
+                    {Name: "LaLaLand", 
+                    Rating: 2,
+                    Watched: true},
+
+    ]
+
+// LOOPING THROUGH AN ARRAY OF OBJETCS
+
+arr.forEach(function(movie){
+    var result = " You have ";
+    if (movie.Watched) {
+        result += "watched ";
+    }
+    else {
+        result += "not seen ";
+    }
+    result += "\"" + movie.Name + "\"";
+    result += " which has a " + movie.Rating + " star rating";
+console.log(result)
+    });
+
