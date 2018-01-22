@@ -752,3 +752,25 @@ else {
 }
   return result;
 }
+
+
+// THIS. FUNCTION NESTED INSIDE AN OBJECT
+
+var comments = {};
+
+
+ comments.data = ["good job!", "yolo", "getFuk", "jioji"] // adds this array 
+                                                            //as an object to the above object
+
+
+comments.print = function(){
+    this.data.forEach(function(ele){   //this targets the .data object, so the function will just target the data
+    console.log(ele);
+    });
+    }
+
+    comments.print();
+     good job!
+     yolo
+     getFuk
+     jioji
