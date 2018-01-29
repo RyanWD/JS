@@ -1,5 +1,149 @@
-Testing pushing edited files to gitHub
+var guests = [
+    {Name:"Shaz",
+    Address: "",
+    Attending: true },
+    
+     {Name:"Tim",
+     Address: "",
+     Attending: true },
 
-Practice step 2
+     {Name:"Ethan",
+     Address: "",
+     Attending: true },
 
-Practice step 3
+     {Name:"Emma + baby",
+     Address: "",
+     Attending: true },
+
+     {Name:"Lee",
+     Address: "",
+     Attending: true },
+
+     {Name:"Steve",
+     Address: "",
+     Attending: true },
+
+     {Name:"Fiona",
+     Address: "",
+     Attending: true },
+
+     {Name:"Debs",
+     Address: "",
+     Attending: true },
+
+     {Name:"John",
+     Address: "",
+     Attending: true },
+
+     {Name:"Frazer",
+     Address: "",
+     Attending: true },
+
+     {Name:"Daniel",
+     Address: "",
+     Attending: true },
+
+     {Name:"Jo",
+     Address: "",
+     Attending: true },
+
+
+     {Name:"Oscar",
+     Address: "",
+     Attending: true },
+
+     {Name:"Adele",
+     Address: "",
+     Attending: true },
+
+     {Name:"Bean",
+     Address: "",
+     Attending: true },
+
+     {Name:"Matt",
+     Address: "",
+     Attending: true },
+
+     {Name:"Adam",
+     Address: "",
+     Attending: true },
+
+     {Name:"Kate",
+     Address: "",
+     Attending: true },
+
+     {Name:"Simon",
+     Address: "",
+     Attending: true },
+
+     {Name:"Sidel",
+     Address: "",
+     Attending: true },
+
+     {Name:"Blane + gf",
+     Address: "",
+     Attending: true },
+
+     {Name:"Becky + Matt",
+     Address: "",
+     Attending: true },
+
+
+     {Name:"Shauna + crosbie",
+     Address: "",
+     Attending: true },
+
+
+     {Name:"Mark Oreilly",
+     Address: "",
+     Attending: true },
+
+     {Name:"Easton",
+     Address: "",
+     Attending: true },
+
+     {Name:"Tyc",
+     Address: "",
+     Attending: true },
+
+     {Name:"Dale + Tash",
+     Address: "",
+     Attending: true },
+
+     {Name:"Emily",
+     Address: "",
+     Attending: true },
+
+     {Name:"Rich",
+     Address: "",
+     Attending: true },
+
+     {Name:"August",
+     Address: "",
+     Attending: true },
+
+     {Name:"Ponty",
+     Address: "",
+     Attending: true },
+
+     {Name:"Carol",
+     Address: "",
+     Attending: true },
+
+     {Name:"Laura",
+     Address: "",
+     Attending: true },
+
+     {Name:"Sarah",
+     Address: "",
+     Attending: true },
+     
+     {Name:"Jared",
+     Address: "",
+     Attending: true },
+
+     {Name:"Velda",
+     Address: "",
+     Attending: false }
+  
+]

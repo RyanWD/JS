@@ -774,3 +774,270 @@ comments.print = function(){
      yolo
      getFuk
      jioji
+
+
+          // NODE SELECTOR PRACTICE 
+
+//SWITCHES BACKGROUND BETWEEN BLUE AND WHITE EVERY 3000 MILISECONDS //
+
+     var body = document.querySelector("body");
+
+     var isBlue = false;
+     
+     setInterval(function(){
+     if (isBlue) {
+         body.style.background = "white";
+     }
+     else { 
+         body.style.background = "#323";
+     }
+     isBlue = !isBlue;
+     }, 3000);
+
+// IN HTML DOC // 
+<p id="first" class="special">Hello</p>
+<p class="special">Goodbye</p>
+<p>Hi again</p>
+<p id="last">Goodbye again</p>
+
+// DIFFERENT WAY OF SELECTING THE FIRST 'P' //
+var pOne = document.getElementById("first");
+var pTWO = document.querySelectorAll(".special")[0];
+var pThree = document.querySelector("p");
+var pFour = document.querySelector("p:first-of-type");
+var pFive = document.querySelector("#first");
+var pSix = document.querySelector(".special");
+var pSeven = document.getElementsByClassName("special")[0];
+var pEight = document.getElementsByTagName("p")[0];
+
+
+// CHANGING LINK TAGS AND IMG SRC
+
+var a = document.getElementsByTagName("a")[0];
+a.getAttribute("href"); //displays the attribute of href "goggle.com"
+
+a.setAttribute("href", "http://www.lol.com"); // sets it as "lol.com"
+
+var img = document.querySelector("img");
+img.setAttribute("src", "corgi.png");
+
+
+// DOM EVENTS 
+
+element.addEventListener(type, functionToCall); //eg.
+
+var button = document.querySelector("button");
+
+button.addEventListener("click", function() {
+    console.log("SOMEONE CLICKED THE BUTTON!");
+});
+
+
+
+
+
+
+
+
+
+     // GUEST COUNTER + INFO
+
+var guests = [
+    {Name:"Shaz",
+    Address: "",
+    Attending: true },
+    
+     {Name:"Tim",
+     Address: "",
+     Attending: true },
+
+     {Name:"Ethan",
+     Address: "",
+     Attending: true },
+
+     {Name:"Emma + baby",
+     Address: "",
+     Attending: true },
+
+     {Name:"Lee",
+     Address: "",
+     Attending: true },
+
+     {Name:"Steve",
+     Address: "",
+     Attending: true },
+
+     {Name:"Fiona",
+     Address: "",
+     Attending: true },
+
+     {Name:"Debs",
+     Address: "",
+     Attending: true },
+
+     {Name:"John",
+     Address: "",
+     Attending: true },
+
+     {Name:"Frazer",
+     Address: "",
+     Attending: true },
+
+     {Name:"Daniel",
+     Address: "",
+     Attending: true },
+
+     {Name:"Jo",
+     Address: "",
+     Attending: true },
+
+
+     {Name:"Oscar",
+     Address: "",
+     Attending: true },
+
+     {Name:"Adele",
+     Address: "",
+     Attending: true },
+
+     {Name:"Bean",
+     Address: "",
+     Attending: true },
+
+     {Name:"Matt",
+     Address: "",
+     Attending: true },
+
+     {Name:"Adam",
+     Address: "",
+     Attending: true },
+
+     {Name:"Kate",
+     Address: "",
+     Attending: true },
+
+     {Name:"Simon",
+     Address: "",
+     Attending: true },
+
+     {Name:"Sidel",
+     Address: "",
+     Attending: true },
+
+     {Name:"Blane + gf",
+     Address: "",
+     Attending: true },
+
+     {Name:"Becky + Matt",
+     Address: "",
+     Attending: true },
+
+
+     {Name:"Shauna + crosbie",
+     Address: "",
+     Attending: true },
+
+
+     {Name:"Mark Oreilly",
+     Address: "",
+     Attending: true },
+
+     {Name:"Easton",
+     Address: "",
+     Attending: true },
+
+     {Name:"Tyc",
+     Address: "",
+     Attending: true },
+
+     {Name:"Dale + Tash",
+     Address: "",
+     Attending: true },
+
+     {Name:"Emily",
+     Address: "",
+     Attending: true },
+
+     {Name:"Rich",
+     Address: "",
+     Attending: true },
+
+     {Name:"August",
+     Address: "",
+     Attending: true },
+
+     {Name:"Ponty",
+     Address: "",
+     Attending: true },
+
+     {Name:"Carol",
+     Address: "",
+     Attending: true },
+
+     {Name:"Laura",
+     Address: "",
+     Attending: true },
+
+     {Name:"Sarah",
+     Address: "",
+     Attending: true },
+     
+     {Name:"Jared",
+     Address: "",
+     Attending: true },
+
+     {Name:"Velda",
+     Address: "",
+     Attending: false }
+  
+]
+
+function GuestStatus(GuestList) {
+    var result = "\"" + GuestList.Name + "\"" 
+    if (GuestList.Attending) {
+        result += " is attending your wedding party"
+    }
+    else {   
+        result += " is NOT attending your wedding party"
+    }
+   return result;
+}
+
+    function GuestCount(GuestList){
+    var plusGuests = 0;
+    if (GuestList.Name.indexOf(' + ') > -1) {
+    plusGuests += 1
+    }
+    return plusGuests;
+    }
+
+    guests.forEach(function(GuestList) {
+    console.log(GuestStatus(GuestList));
+    console.log(GuestCount(GuestList));
+    });
+
+    var allGuests = guests.length + plusGuests;
+    console.log(allGuests);
+
+
+// TRYING ABOVE WITHOUT .forEach
+
+for (var GuestList = 0; GuestList < guests.length; GuestList++){
+    var result = "\"" + guests[GuestList].Name + "\"" 
+    if (guests[GuestList].Attending) {
+        result += " is attending your wedding party"
+    }
+    else {   
+        result += " is NOT attending your wedding party"
+    }
+    var plusGuests = 0;
+    if (guests[GuestList].Name.indexOf(' + ') > -1) {
+    plusGuests += 1
+    }
+     
+    console.log(result);
+};
+console.log(plusGuests);
+
+
+console.log(guests[GuestList].Name);
