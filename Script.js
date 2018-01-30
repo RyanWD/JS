@@ -823,7 +823,7 @@ img.setAttribute("src", "corgi.png");
 
 
 // DOM EVENTS 
-
+//eg1
 element.addEventListener(type, functionToCall); //eg.
 
 var button = document.querySelector("button");
@@ -831,7 +831,62 @@ var button = document.querySelector("button");
 button.addEventListener("click", function() {
     console.log("SOMEONE CLICKED THE BUTTON!");
 });
+//eg2
+var button = document.querySelectorAll("button")[1];
+var paragraph = document.getElementsByTagName("p")[0];
 
+button.addEventListener("click", function() {
+    paragraph.textContent = "Someone clicked me!!";
+});
+
+//eg3
+var h1 = document.querySelector("h1");
+h1.addEventListener("click", function(){
+h1.style.color = "red";
+});
+
+//eg4 *bad example, as all li inside will be clicked*
+document.querySelector("ul").addEventListener("click", function(){
+
+    console.log("YOU CLICKED THE UL")
+});
+
+//eg5
+var lis = document.querySelectorAll("li");
+
+function lisSelect() {
+    this.style.color = "pink";
+}
+
+for(var i = 0; i < lis.length; i++){
+lis[i].addEventListener("click", lisSelect);
+}
+
+//eg6 *toggling background* LONG VERSION
+document.querySelectorAll("button")[2].addEventListener("click", changeBackground);
+
+var isRed = false;
+
+function changeBackground(){
+if(isRed){
+    document.body.style.background = "white";
+ 
+} else {
+    document.body.style.background = "red";
+    
+}
+isRed = !isRed
+};
+
+//eg6 *toggling background* SHORT VERSION
+/* IN CSS .purple {
+
+    background: purple;
+}*/
+
+document.querySelectorAll("button")[3].addEventListener("click", function(){
+document.body.classList.toggle("purple");
+});
 
 
 
