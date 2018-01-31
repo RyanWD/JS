@@ -1,4 +1,10 @@
-.purple {
-
-    background: purple;
+.done {
+text-decoration: line-through;
+opacity: 0.5;
 }
+
+.selected {
+
+color: green;
+}
+

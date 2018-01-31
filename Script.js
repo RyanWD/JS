@@ -889,6 +889,37 @@ document.body.classList.toggle("purple");
 });
 
 
+// MOUSEOVER / MOUSEOUT LESSON
+
+/* IN CSS FILE
+                .done {
+                text-decoration: line-through;
+                opacity: 0.5;
+                }
+
+                .selected {
+                color: green;
+                }
+                                    */
+
+// LOOPS THROUGH LI'S APPLYING FUNCTION IF TRIGGERED
+var liAll = document.querySelectorAll("li");
+
+for (var i = 0; i < liAll.length; i++){
+    liAll[i].addEventListener("mouseover", function(){
+      //  this.style.color = "pink"; 
+      this.classList.add("selected");
+        });
+    liAll[i].addEventListener("mouseout", function(){
+       // this.style.color = "black";
+       this.classList.remove("selected");
+        });
+    liAll[i].addEventListener("click", function(){
+        this.classList.toggle("done")
+     
+    });
+}
+
 
 
 
