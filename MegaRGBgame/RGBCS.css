@@ -1,15 +1,26 @@
 body {
     background-color: #232323;
+    margin: 0;
+    font-family: "Avenir", "Montserrat";
+    
 }
 
-h1, span {
+h1 {
 
-    color: #fff
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.1;
+    text-transform: uppercase;
+    background-color: steelblue;
+    margin: 0;
+    padding: 20px 0;
 }
 
 #container{
     max-width: 840px;
-    margin: 0 auto;
+    margin: 20px auto;
+  
 }
 
 .square {
@@ -17,6 +28,50 @@ h1, span {
     background-color: purple;
     padding-bottom: 30%;
     float: left;
-    margin: 1.66%
+    margin: 1.66%;
+    border-radius: 15%;
+    transition: background-color 0.6s;
 }
 
+#stripe {
+
+    background-color: white;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+.selected {
+
+    background-color: steelblue;
+    color: white;
+}
+
+#colorDisplay {
+    font-size: 200%;
+}
+
+#message {
+    display: inline-block; /* keeps the space for when the message is displayed */
+    width: 20%;
+}
+
+button {
+
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%; /* fills container */
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.3s; /* not all browsers support this */
+    outline: none; /* by default browsers have this on*/
+
+}
+
+button:hover {
+    color: white;
+    background-color: steelblue;
+}
