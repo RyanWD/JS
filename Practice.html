@@ -12,16 +12,47 @@
         background: pink;
        
     }
+    .wrapper {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        /*grid-column-gap: 1em;
+        grid-row-gap: 1em;*/
+        grid-gap: 1em;
+    }
     
+    .wrapper > div {
+        background: #eee;
+        padding: 1em;
+    }
+    .wrapper > div:nth-child(odd){
+        background: #ddd
+
+    }
     </style>
 </head>
-<body>
-<ul>
+<!--<body>
+<!--<ul>
 <li>human</li>
 <li>cat</li>
 <li>dog</li>
-</ul>
+</ul> -->
+<div class="wrapper">
+
+
+    <div>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto asperiores dolor dignissimos, debitis ratione cupiditate eveniet odio praesentium laborum unde quasi non sequi enim id suscipit necessitatibus nisi dolores minima aperiam dolore rem sint consectetur ut veritatis. Facere, aliquid, minima porro tempora dolor reprehenderit vitae fugiat, voluptate velit cumque officiis earum omnis deserunt amet culpa cupiditate soluta. Voluptatum ipsam tempore dolorem exercitationem repudiandae eveniet perferendis ipsum? Porro, veritatis! Nesciunt reiciendis explicabo, amet voluptatibus vitae sapiente doloribus error at voluptatum repellendus!
+    </div>
+    <div>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis nesciunt possimus impedit voluptatibus, aliquam qui rerum quod tenetur adipisci in laudantium amet nobis saepe consequuntur illum modi cumque voluptas quis.
+    </div>
+    <div>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto asperiores dolor dignissimos, debitis ratione cupiditate eveniet odio praesentium laborum unde quasi non sequi enim id suscipit necessitatibus nisi dolores minima aperiam dolore rem sint consectetur ut veritatis. Facere, aliquid, minima porro tempora dolor reprehenderit vitae fugiat, voluptate velit cumque officiis earum omnis deserunt amet culpa cupiditate soluta. Voluptatum ipsam tempore dolorem exercitationem repudiandae eveniet perferendis ipsum? Porro, veritatis! Nesciunt reiciendis explicabo, amet voluptatibus vitae sapiente doloribus error at voluptatum repellendus!
+        </div>
+        <div>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis nesciunt possimus impedit voluptatibus, aliquam qui rerum quod tenetur adipisci in laudantium amet nobis saepe consequuntur illum modi cumque voluptas quis.
+        </div>
+</div>
 
 <script src="PracticeJS.js"></script>
-</body>
+</body> -->
 </html>

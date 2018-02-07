@@ -1,6 +1,6 @@
 
 
-var liAll = document.querySelectorAll("li");
+/*var liAll = document.querySelectorAll("li");
 
 for (var i = 0; i < liAll.length; i++){
     liAll[i].addEventListener("mouseover", function(){
@@ -16,6 +16,6 @@ for (var i = 0; i < liAll.length; i++){
      
     });
 }
-
+*/
 
 
