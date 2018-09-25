@@ -1146,3 +1146,50 @@ console.log(plusGuests);
 
 
 console.log(guests[GuestList].Name);
+
+
+// JQUERY PRACTICE //
+
+// selects all a tags
+$("a") // same way you would select in css
+       // 'dollar sign is universal selector 
+
+
+ var styles = {
+    color: "red",
+    backgroundColor: "pink",
+    border: "2px solid purple",
+    display: "inline-block"
+ }   
+
+ $("h1").css(styles) // quick way to style, link to an object
+
+ // OR
+
+ $("li").css("color", "purple");
+ $(".big").css("border", "1px dashed orange");
+
+ // JS is alot more long winded
+ var lis = document.querySelectorAll("li");
+
+ for(var i = 0; i < lis.length; i++){
+     lis[i].style.color = "red";
+ }
+
+// inline JQuery object styling
+
+$("li").css({
+border: "5px solid orange",
+display: "block",
+margin: "20px 20px"
+});
+
+// get any text from html 
+
+$("h1").text() // will display text in all h1's
+$("h1").text("bla bla") // will change h1 to given text
+
+// change 'html doc' 
+
+$("ul").html(<li>this is a list</li>); // changes all li in the ul
+$("li:first-of-type").html("<li>wtf</li>"); // changes first li

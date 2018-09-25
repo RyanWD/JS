@@ -7,4 +7,24 @@ opacity: 0.5;
 
 color: green;
 }*/ 
+body {
+    width: 80%;
+}
+.grey {
+    
+    background-color: lightgray;
+    border-radius: 15px;
+  
+}
 
+.green {
+
+    color:#000!important;
+    background-color:#4CAF50!important;
+    border-radius: 15px;
+}
+
+h1 {
+
+    display: inline-block;
+}
