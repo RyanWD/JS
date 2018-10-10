@@ -770,7 +770,7 @@ comments.print = function(){
     }
 
     comments.print();
-     good job!
+     good
      yolo
      getFuk
      jioji
