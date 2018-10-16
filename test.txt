@@ -9,7 +9,7 @@ Git push
 
 Create seperate branch 
 Git branch (name) // creates branch 
-Git branch (name) -a  //shows all branches + master 
+Git branch -a  //shows all branches + master 
 Git checkout (name)  // switches to that branch
 Git checkout -b (name) // creates branch and switches to that branch
 
