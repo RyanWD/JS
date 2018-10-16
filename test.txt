@@ -2,7 +2,7 @@ Notes:
 
 Git commands (all without brackets)
 
-Master
+Sending files
 Git add (file name)
 Git commit (-m 'message')
 Git push 
@@ -11,3 +11,4 @@ Create seperate branch
 Git branch (name) // creates branch 
 Git branch (name) -a  //shows all branches + master 
 Git checkout (name)  // switches to that branch
+
