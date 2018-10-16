@@ -11,4 +11,7 @@ Create seperate branch
 Git branch (name) // creates branch 
 Git branch (name) -a  //shows all branches + master 
 Git checkout (name)  // switches to that branch
+Git checkout -b (name) // creates branch and switches to that branch
 
+Git branch -d (name) // deletes branch aslong as it's merged 
+Git branch -D (name) // deletes without merge
