@@ -15,3 +15,17 @@ Git checkout -b (name) // creates branch and switches to that branch
 
 Git branch -d (name) // deletes branch aslong as it's merged 
 Git branch -D (name) // deletes without merge
+
+Changing repository 
+Open folder in editor
+cd (repository name eg. JS or RyanWD.github.io)
+Master branch is origin by default 
+
+Creating new repository
+On github create with readme file
+Download/clone to local computer
+git remote -v (shows origin repository)
+
+Collaborating with others 
+On master branch of working repository
+git pull origin master // pulls all up to date files from remote repository onto your local pc
