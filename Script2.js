@@ -304,3 +304,346 @@ function compareEquality(a, b) {
   
   // Change this value to test
   compareEquality(10, "10");
+
+
+  ------
+
+// Setup - loosely not equal 
+function testNotEqual(val) {
+    if (val != 99) { // Change this line
+      return "Not Equal";
+    }
+    return "Equal";
+  }
+  
+  // Change this value to test
+  testNotEqual(10);
+  
+
+  ------
+
+  // Setup - strictly not equal
+function testStrictNotEqual(val) {
+    // Only Change Code Below this Line
+    
+    if (val !== 17) {
+  
+    // Only Change Code Above this Line
+  
+      return "Not Equal";
+    }
+    return "Equal";
+  }
+  
+  // Change this value to test
+  testStrictNotEqual(10);
+
+  ------
+
+// greater than >
+  function testGreaterThan(val) {
+    if (val > 100) {  // Change this line
+      return "Over 100";
+    }
+    
+    if (val > 10) {  // Change this line
+      return "Over 10";
+    }
+  
+    return "10 or Under";
+  }
+  
+  // Change this value to test
+  testGreaterThan(10);
+
+  ------
+
+  // great than or equal to >=
+  function testGreaterOrEqual(val) {
+    if (val >= 20) {  // Change this line
+      return "20 or Over";
+    }
+    
+    if (val >= 10) {  // Change this line
+      return "10 or Over";
+    }
+  
+    return "Less than 10";
+  }
+  
+  // Change this value to test
+  testGreaterOrEqual(10);
+
+
+------
+
+// less than < 
+function testLessThan(val) {
+    if (val < 25) {  // Change this line
+      return "Under 25";
+    }
+    
+    if (val < 55) {  // Change this line
+      return "Under 55";
+    }
+  
+    return "55 or Over";
+  }
+  
+  // Change this value to test
+  testLessThan(10);
+
+
+  ------
+
+  // smaller than or equal to <= 
+  function testLessOrEqual(val) {
+    if (val <= 12) {  // Change this line
+      return "Smaller Than or Equal to 12";
+    }
+    
+    if (val <= 24) {  // Change this line
+      return "Smaller Than or Equal to 24";
+    }
+  
+    return "More Than 24";
+  }
+  
+  // Change this value to test
+  testLessOrEqual(10);
+  
+
+  -------
+// && operator both operands to the left and right must be true
+  function testLogicalAnd(val) {
+    // Only change code below this line
+  
+    if (val <= 50 && val >= 25) {
+
+        return "Yes";
+      
+    }
+  
+    // Only change code above this line
+    return "No";
+  }
+  
+  // Change this value to test
+  testLogicalAnd(10);
+
+  -----
+
+// like && but || means 'or', only one statement needs to be true.
+
+  function testLogicalOr(val) {
+    // Only change code below this line
+  
+    if (val < 10 || val > 20) {
+      return "Outside";
+    }
+  
+    // Only change code above this line
+    return "Inside";
+  }
+  
+  // Change this value to test
+  testLogicalOr(15);
+
+
+  ------
+// using else. if the 'if' statement is false, else is executed.
+  function testElse(val) {
+    var result = "";
+    // Only change code below this line
+    
+    if (val > 5) {
+      result = "Bigger than 5";
+    }
+    
+    else {
+      result = "5 or Smaller";
+    }
+    
+    // Only change code above this line
+    return result;
+  }
+  
+  // Change this value to test
+  testElse(4);
+  
+
+  -----
+// using multiple 'if' statements with 'if else'
+  function testElseIf(val) {
+    if (val > 10) {
+      return "Greater than 10";
+    }
+    
+    else if (val < 5) {
+      return "Smaller than 5";
+    }
+    else {
+    return "Between 5 and 10";
+    }
+  }
+  
+  // Change this value to test
+  testElseIf(7);
+  
+  --------
+
+// putting if statements in logical order.
+  function orderMyLogic(val) {
+    if (val < 5) {
+      return "Less than 5";
+    } else if (val < 10) {
+      return "Less than 10";
+    } else {
+      return "Greater than or equal to 10";
+    }
+  }
+  
+  // Change this value to test
+  orderMyLogic(4);
+
+  -------
+
+// chaining if / if else statements.
+  function testSize(num) {
+    // Only change code below this line
+    if (num < 5) {
+      return "Tiny"
+    } else if (num < 10) {
+      return "Small" 
+    } else if (num < 15) {
+      return "Medium"
+    } else if (num < 20) {
+      return "Large"
+    } else {
+      return "Huge"
+    }
+    // Only change code above this line
+  }
+  
+  // Change this value to test
+  testSize(7);
+
+  ------
+
+  // golf game - a good example of using multiple if else statements
+  var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+function golfScore(par, strokes) {
+  // Only change code below this line
+  if (strokes === 1) {
+    return names[0];
+  } else if (strokes <= par-2) {
+return names[1];
+  } else if (strokes == par-1) {
+    return names[2];
+  } else if (strokes == par) {
+    return names[3];
+  } else if (strokes == par+1) {
+    return names[4];
+  } else if (strokes == par+2) {
+    return names[5];
+  } else {
+    return names[6];
+  }
+
+  // Only change code above this line
+}
+
+// Change these values to test
+golfScore(5, 4);
+
+------
+
+// with lots of options to choose from. A switch is good to use. a break is needed or it will auto run to the next case.
+function caseInSwitch(val) {
+    var answer = "";
+    // Only change code below this line
+    switch(val){
+    case 1: 
+    return "alpha"
+    break;
+    case 2:
+    return "beta"
+    break;
+    case 3: 
+    return "gamma"
+    break;
+      case 4: 
+    return "delta"
+    break;
+    }
+    
+    // Only change code above this line  
+    return answer;  
+  }
+  // Change this value to test
+  caseInSwitch(1); 
+  
+
+  ------
+
+  // case statements but with a default, similar to else statement, if none of the case statements are met.
+  function switchOfStuff(val) {
+    var answer = "";
+    // Only change code below this line
+    switch(val) {
+      case "a":
+      return "apple"
+      break
+       case "b":
+      return "bird"
+      break
+       case "c":
+      return "cat"
+      break
+      
+      default:
+      return "stuff"
+    }
+    
+    
+    // Only change code above this line  
+    return answer;  
+  }
+  
+  // Change this value to test
+  switchOfStuff(1);
+  
+
+  -----
+
+
+  // similar to the || when using 'if' removing the break, all cases will fire until a break is met.
+  function sequentialSizes(val) {
+    var answer = "";
+    // Only change code below this line
+    switch(val){
+  case 1:
+  case 2:
+  case 3: 
+  return "Low"
+  break;
+  case 4:
+  case 5:
+  case 6: 
+  return "Mid"
+  break
+  case 7:
+  case 8:
+  case 9: 
+  return "High"
+  
+    }
+    
+    
+    // Only change code above this line  
+    return answer;  
+  }
+  
+  // Change this value to test
+  sequentialSizes(1);
+  
