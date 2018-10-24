@@ -647,3 +647,155 @@ function caseInSwitch(val) {
   // Change this value to test
   sequentialSizes(1);
   
+
+  function chainToSwitch(val) {
+  var answer = "";
+  // Only change code below this line
+  
+  switch(val) {
+    case "bob":
+    answer = "Marley";
+    break
+   case 42:
+    answer = "The Answer";
+    break
+   case 1:
+    answer = "There is no #1";
+    break
+   case 99: 
+    answer = "Missed me by this much!";
+    break
+  case 7:
+    answer = "Ate Nine";
+  }
+  
+  // Only change code above this line  
+  return answer;  
+}
+
+// Change this value to test
+chainToSwitch(7);
+
+
+-------
+
+// replacing strict equal statements with cases. 
+function chainToSwitch(val) {
+    var answer = "";
+    // Only change code below this line
+    
+    switch(val) {
+      case "bob":
+      answer = "Marley";
+      break
+     case 42:
+      answer = "The Answer";
+      break
+     case 1:
+      answer = "There is no #1";
+      break
+     case 99: 
+      answer = "Missed me by this much!";
+      break
+    case 7:
+      answer = "Ate Nine";
+    }
+    
+    // Only change code above this line  
+    return answer;  
+  }
+  
+  // Change this value to test
+  chainToSwitch(7);
+  
+
+  -----
+
+// returning boolean values using equality operator 
+  function isLess(a, b) {
+    // Fix this code
+  return a < b;
+  }
+  
+  // Change these values to test
+  isLess(10, 15);
+
+  ----
+
+  // using the return keyword to stop a function once a statement has been reached.
+  // Setup
+function abTest(a, b) {
+    // Only change code below this line
+    
+    if (a < 0 || b < 0){
+    return undefined
+    }
+    // Only change code above this line
+  
+    return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+  }
+  
+  // Change values below to test your code
+  abTest(2,2);
+
+-------
+
+// counting cards blackjack game.
+
+var count = 0;
+
+function cc(card) {
+  // Only change code below this line
+  var Bet = 1;
+if (card >= 2 && card <= 6) {
+  count++;
+
+} else if (card === 10 || card === 'J' || card === 'Q' || card === 'K' || card === 'A') {
+count--;
+
+}
+
+if (count >= Bet) {
+return count + " Bet";
+
+} else {
+
+  return count + " Hold"
+}
+
+  // Only change code above this line
+}
+
+// Add/remove calls to test your function.
+// Note: Only the last will display
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+
+
+-----
+// an alternative cleaner version of the blackjack game above.
+
+function cc(card) {
+    // Only change code below this line
+    switch(card){
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+        count++;
+        break;
+      case 10:
+      case "J":
+      case "Q":
+      case "K":
+      case "A":
+        count--;
+        break;
+    }
+    if (count > 0){
+      return count + " Bet";
+    } else {
+      return count + " Hold";
+    }
+    // Only change code above this line
+  }
