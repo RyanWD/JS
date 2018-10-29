@@ -799,3 +799,566 @@ function cc(card) {
     }
     // Only change code above this line
   }
+
+  --------
+// making Objects, objects can contain arrays
+  // Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+// Only change code below this line.
+
+var myDog = {
+  
+  name: 'poopy',
+  legs: 2,
+  tails: 6,
+  friends: ['ryan','adele']
+  
+};
+
+--------
+// accessing object properties can be done two ways. '.' notation if you know the property name or the property had a space in the name, use [] 
+// Setup
+var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+// Only change code below this line
+
+var hatValue = testObj.hat;      // Change this line
+var shirtValue = testObj.shirt;    // Change this line
+
+-------
+// using bracket notation to locate the object properties 
+// Setup
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+// Only change code below this line
+
+var entreeValue = testObj['an entree'];   // Change this line
+var drinkValue = testObj['the drink'];    // Change this line
+
+-----
+
+// Setup
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Only change code below this line;
+
+var playerNumber = 16;       // Change this Line
+var player = testObj[playerNumber];   // Change this Line
+
+
+----------
+// object property collected dynamically using a function. 
+var someObj = {
+  propName: "John"
+};
+function propPrefix(str) {
+  var s = "prop"; 
+  return s + str;
+}
+var someProp = propPrefix("Name"); // someProp now holds the value 'propName'
+console.log(someObj[someProp]); // "John"
+
+--------
+// changing object properties using [] or . notation 
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.name = "Happy Camper";
+
+// Setup
+var myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line.
+
+myDog.name = 'Happy Coder'
+
+-------
+// adding new properties to an object.
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.bark = "bow-wow";
+
+// Setup
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line.
+
+myDog.bark = 'woof' 
+
+------
+
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+
+delete ourDog.bark;
+
+// Setup
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+// Only change code below this line.
+
+delete myDog.tails;
+
+
+------
+// whichever string is put into val is looked up in the object.
+// Setup
+function phoneticLookup(val) {
+  var result = "";
+
+  // Only change code below this line
+ var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie":"Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  }
+result = lookup[val];
+  // Only change code above this line
+  return result;
+}
+
+// Change this value to test
+phoneticLookup("charlie");
+
+-------
+// using .hasOwnProperty keyword to check if a property exists in an object.
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+  // Your Code Here
+  if (myObj.hasOwnProperty(checkProp)) {
+    return myObj[checkProp]
+  } else {
+  return "Not Found";
+  }
+}
+
+// Test your code by modifying these values
+checkObj("gift");
+
+-------
+// adding a new object to an array, which also includes another array
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [ 
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "Soup",
+    "title": "is hot",
+    "release_year": 1990,
+    "formats": [
+      "tape",
+      "vhs",
+      "cd"
+    ]
+  } // Add record here
+];
+
+
+-----------
+//The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+// Setup
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+var gloveBoxContents = myStorage.car.inside["glove box"]; //  Change this line
+
+
+-------
+// how to access a nested array
+// Setup
+var myPlants = [
+  { 
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }  
+];
+
+// Only change code below this line
+
+var secondTree = myPlants[1].list[1]; // Change this line
+
+
+-----
+// record collection test - check for certain properties, if they're not found add the new ones.
+// Setup
+var collection = {
+  "2548": {
+    "album": "Slippery When Wet",
+    "artist": "Bon Jovi",
+    "tracks": [ 
+      "Let It Rock", 
+      "You Give Love a Bad Name" 
+    ]
+  },
+  "2468": {
+    "album": "1999",
+    "artist": "Prince",
+    "tracks": [ 
+      "1999", 
+      "Little Red Corvette" 
+    ]
+  },
+  "1245": {
+    "artist": "Robert Palmer",
+    "tracks": [ ]
+  },
+  "5439": {
+    "album": "ABBA Gold"
+  }
+};
+// Keep a copy of the collection for tests
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+// Only change code below this line
+function updateRecords(id, prop, value) {
+if (id && prop === "tracks" && value !== "") {
+if (collection[id][prop]) {
+  collection[id][prop].push(value);
+}
+else {
+  collection[id][prop]=[value];
+}
+} else if (value !== "") {
+  collection[id][prop] = value;
+}
+else {
+  delete collection[id][prop];
+}
+
+return collection;
+}
+
+// Alter values below to test your code
+updateRecords(5439, "artist", "ABBA");
+
+-----
+// using while loops
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+
+var i = 0;
+while (i < 5) {
+  myArray.push(i);
+  i++;
+}
+
+-----
+
+// for loops
+// for ([initialization]; [condition]; [final-expression])
+
+// Example
+var ourArray = [];
+
+for (var i = 0; i < 5; i++) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+
+for (var i = 1; i < 6; i++) {
+    myArray.push(i)
+}
+
+------
+// incrementing by 2 rather than the standard i++
+// Example
+var ourArray = [];
+
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+
+for (var i = 1; i < 10; i += 2) {
+  myArray.push(i)
+}
+
+-------
+// looping down
+// Example
+var ourArray = [];
+
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+
+for (var i = 9; i >= 1; i -= 2) {
+  myArray.push(i);
+}
+
+-----
+// using an embedded for loop to loop through an inner array and multiply them altogether. 
+function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr[i].length; j++) {
+      product *= arr[i][j]
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+
+// Modify values below to test your code
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+
+
+-----
+// using a do while loop. The code will run atleast once.
+// Setup
+var myArray = [];
+var i = 10;
+
+// Only change code below this line.
+do {
+myArray.push(i);
+  i++;
+} while (i < 5);
+
+------
+
+//Setup
+// Using a for loop to find properties in an array
+
+var contacts = [
+  {
+      "firstName": "Akira",
+      "lastName": "Laine",
+      "number": "0543236543",
+      "likes": ["Pizza", "Coding", "Brownie Points"]
+  },
+  {
+      "firstName": "Harry",
+      "lastName": "Potter",
+      "number": "0994372684",
+      "likes": ["Hogwarts", "Magic", "Hagrid"]
+  },
+  {
+      "firstName": "Sherlock",
+      "lastName": "Holmes",
+      "number": "0487345643",
+      "likes": ["Intriguing Cases", "Violin"]
+  },
+  {
+      "firstName": "Kristian",
+      "lastName": "Vos",
+      "number": "unknown",
+      "likes": ["JavaScript", "Gaming", "Foxes"]
+  }
+];
+
+
+
+// Only change code below this line
+
+function lookUpProfile(name, prop){
+// Only change code below this line
+for (var i = 0; i < contacts.length; i++) {
+if (contacts[i].firstName === name) {
+ if (contacts[i].hasOwnProperty(prop)) {
+ return contacts[i][prop];
+ } else  {
+return "No such property";
+} 
+}
+}
+return "No such contact";
+// Only change code above this line
+}
+
+// Change these values to test your function
+lookUpProfile("Akira", "likes");
+
+------
+
+// using Math.random to return a random number between 0-1
+
+function randomFraction() {
+
+  // Only change code below this line.
+
+  return Math.random();
+
+  // Only change code above this line.
+}
+
+
+-----
+
+// using the Math.floor function to round down to a whole number. 
+
+
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20); // returns a number between 0-19
+// We are calling Math.random(), multiplying the result by 20, then passing the value to Math.floor() function to round the value down to the nearest whole number.
+
+
+function randomWholeNum() {
+
+  // Only change code below this line.
+
+  return Math.floor(Math.random() * 10); // reuturns a number between 0-9
+}
+
+
+--------
+// using min - max to set min/max limits to Math.random 
+// Example
+function ourRandomRange(ourMin, ourMax) {
+
+  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+} 
+
+ourRandomRange(1, 9);
+
+// Only change code below this line.
+
+function randomRange(myMin, myMax) {
+
+return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin; // Change this line
+
+}
+
+// Change these values to test your function
+var myRandom = randomRange(5, 15);
+
+-------
+
+//using the function parseInt() to convert a string into a number 
+function convertToInteger(str) {
+  return parseInt(str) 
+  }
+  
+  convertToInteger("56");
+
+
+  ------
+//parseInt(string, radix); The radix can be an integer between 2 and 36.
+//
+  function convertToInteger(str) {
+    return parseInt(str, 2)
+  }
+  
+  convertToInteger("10011"); // converts to binary 
+
+  ------
+  // Ternary operator
+// single line if else statement syntax -> "condition ? statement-if-true : statement-if-false;"
+  function checkEqual(a, b) {
+    return a === b ? true : false;
+  }
+  
+  checkEqual(1, 2);
+
+
+  ------
+// an easier way to write if, else if, else statements.
+  function checkSign(num) {
+    return (num > 0) ? "positive" : (num === 0) ? "zero" : "negative";
+  }
+  
+  checkSign(10);
