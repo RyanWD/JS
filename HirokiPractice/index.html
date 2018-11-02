@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="button">test</div>
+  <textarea id="japanese" name="" cols="30" rows="10" ></textarea>
+  <textarea id="english" name="" cols="30" rows="10" ></textarea>
+  <div id="result"></div>
+  <script>
+    var japanese = document.getElementById("japanese"); 
+    var english  = document.getElementById("english"); 
+    var button = document.getElementById("button");
+    var result = document.getElementById("result");
+    var right_table = {
+      "japanese" : "日本語",
+      "english"  : "japanese"
+    };
+    //button.addEventListener("click", function(){
+      japanese.addEventListener("change", function(){
+      value_jp = japanese.value;
+      value_en = english.value;
+      english.value = "";
+      var list = document.createElement("li");
+      list.innerHTML = value_jp + value_en;
+      result.appendChild(list);
+      if(value_jp == right_table.japanese){
+        english.value = right_table.english;
+      } else{
+        console.log("can't change");
+      }
+    });
+  </script>
+</body>
+</html>

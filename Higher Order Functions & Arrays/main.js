@@ -11,7 +11,23 @@ const companies = [
   ];
   
   const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
- 
+
+
+  /* PRACICE AREA */
+
+function showDate() {
+    let time = document.getElementById('time');
+    time.innerHTML = Date();
+}
+
+function clearDate() {
+    let time = document.getElementById('time');
+    time.innerHTML = '';
+}
+
+
+  /* PRACICE AREA */
+
   // basic for loop
   /*
   for(let i = 0; i < companies.length; i++) {
@@ -194,10 +210,22 @@ console.log(allCompanies); */
 // --------------------------COMBINE METHODS----------------------------
 
 
-const combined = ages
+/* const combined = ages
 .map(age => age * 2)
 .filter(age => age >= 40)
 .sort((a, b) => (a > b ? 1 : -1)) // or just ((a, b) => a - b);
 .reduce((total, age) => (total + age), 0);
 
-console.log(combined)
+console.log(combined) */
+
+
+//--------------------------- PRACTICE ------------------------------------
+
+//   Successful practice #1 
+
+/* let adults = []
+let kids = [];
+const test = ages.filter(i => i < 18 ? kids.push(i) : adults.push(i));
+  console.log(kids);
+  console.log(adults); */
+
