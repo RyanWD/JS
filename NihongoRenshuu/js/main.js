@@ -1,96 +1,93 @@
 
 // listen for form submit 
-document.getElementById("myForm").addEventListener("submit", saveBookmark);
+document.getElementById("myForm").addEventListener("submit", saveLanguage);
 
 // save bokmark
-function saveBookmark(e){
+function saveLanguage(e){
 
-    var siteName = document.getElementById("siteName").value;
-    var siteUrl = document.getElementById("siteUrl").value;
+    var inputEnglish = document.getElementById("inputEnglish").value;
+    var inputJapanese = document.getElementById("inputJapanese").value;
 
-if(!siteName || !siteUrl) {
+if(!inputEnglish || !inputJapanese) {
     alert("Please fill in form")
     return false;
 }
 
 
-    var bookmark = {
-    name: siteName,
-    url: siteUrl
+    var holder = {
+    name: inputEnglish,
+    url: inputJapanese
     }      
     // prevents form from submitting.
    
 
-if (localStorage.getItem('bookmarks') === null) {
+if (localStorage.getItem('gengo') === null) {
     // Init array 
-var bookmarks = [];
+var gengo = [];
 // add to array 
-bookmarks.push(bookmark);
+gengo.push(holder);
 // set to local storage 
-localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+localStorage.setItem('gengo', JSON.stringify(gengo));
 } else {
-    // get bookmarks from local storage 
-    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-    // add bookmarkt to array
-    bookmarks.push(bookmark);
+    // get gengo from local storage 
+    var gengo = JSON.parse(localStorage.getItem('gengo'));
+    // add Holdert to array
+    gengo.push(holder);
     // set back to local storage 
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    localStorage.setItem('gengo', JSON.stringify(gengo));
 }
 document.getElementById('myForm').reset();
 
-fetchBookmarks();
+fetchLanguage();
 
 e.preventDefault();  
 }
 
-// Delete bookmark 
-function deleteBookmark(url){
-//get bookmarks from localStorage 
-var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-// Loop through bookmarks
-for(var i = 0; i < bookmarks.length; i++){
-    if(bookmarks[i].url === url) {
+// Delete holder 
+function deleteHolder(url){
+//get gengo from localStorage 
+var gengo = JSON.parse(localStorage.getItem('gengo'));
+// Loop through gengo
+for(var i = 0; i < gengo.length; i++){
+    if(gengo[i].url === url) {
 
         //remove from array
-        bookmarks.splice(i, 1);
+        gengo.splice(i, 1);
     }
 
 }
     //reset back to local storage 
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    localStorage.setItem('gengo', JSON.stringify(gengo));
 
-    //re fetch bookmarks
-    fetchBookmarks();
+    //re fetch gengo
+    fetchLanguage();
 }
 
 
-// Fetch bookmarks 
-function fetchBookmarks(){
-    // get bookmarks from local storage 
-    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+// Fetch gengo 
+function fetchLanguage(){
+    // get gengo from local storage 
+    var gengo = JSON.parse(localStorage.getItem('gengo'));
 
 // get output ID
-var bookmarksResults = document.getElementById('bookmarksResults');
-bookmarksResults.innerHTML = '';
-for(var i = 0; i < bookmarks.length; i++){
-    var name = bookmarks[i].name;
-    var url = bookmarks[i].url;
+var languageResults = document.getElementById('languageResults');
+languageResults.innerHTML = '';
+for(var i = 0; i < gengo.length; i++){
+    var name = gengo[i].name;
+    var url = gengo[i].url;
 
-bookmarksResults.innerHTML += '<div class="langBox">' + 
+languageResults.innerHTML += '<div class="langBox">' + 
                                 '<h3 id="eng" class="card-header">' +name+ '</h3>' +
                                  '<h3 id="jap" class="jap card-header">' +url+ '</h3>' +
                                  '<div class="align-delete">' +
-                                 '<a onclick="deleteBookmark(\''+url+'\')" id="delete" class="btn btn-danger">Delete</a>' +
+                                 '<a onclick="deleteHolder(\''+url+'\')" id="delete" class="btn btn-danger">Delete</a>' +
                                  '</div>' +
                                  '</div>';
-}
+
+                              
+
+                                      
+                                }
+
 };
 
-
-
-// local storage test 
-/* localStorage.setItem('test', 'Hello world');
-console.log(localStorage.getItem('test'));
-localStorage.removeItem('test');
-console.log(localStorage.getItem('test'));
- */
