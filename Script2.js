@@ -1343,7 +1343,7 @@ function convertToInteger(str) {
     return parseInt(str, 2)
   }
   
-  convertToInteger("10011"); // converts to binary 
+  convertToInteger("10011"); // converts from binary to 19
 
   ------
   // Ternary operator
@@ -1483,3 +1483,294 @@ const myConcat = (arr1, arr2) => {
 };
 // test your code
 console.log(myConcat([1, 2], [3, 4, 5]));
+
+
+------------
+
+
+const squareList = (arr) => {
+  "use strict";
+  const squaredIntegers = 
+  arr.filter( (num) => num > 0 && num % parseInt(num) === 0 )
+     .map( (num) => Math.pow(num, 2) );
+  return squaredIntegers;
+};
+
+// test your code
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
+
+
+------------
+
+//setting default parameters, if nothing is input into the function parameter, 
+// it will push this value to the parameter
+
+const increment = (function() {
+  "use strict";
+  return function increment(number, value = 1) { // value = 1 if nothing is input
+    return number + value;
+  };
+})();
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns 6
+
+----------
+
+
+// rest operator, takes arguments and stores them in an array
+// you could even take elements from one array and pass them into another.
+
+
+const sum = (function() {
+  "use strict";
+  return function sum(...args) { // using the three periods 
+    
+    return args.reduce((a, b) => a + b, 0);
+  };
+})();
+console.log(sum(1, 2, 3)); // 6
+
+-------------
+
+// You can copy the contents of one array into another. Below I have copied the contents of arr1 into arr2
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+(function() {
+  "use strict";
+  arr2 = [...arr1]; // 
+})();
+console.log(arr2);
+
+----------------
+
+const AVG_TEMPERATURES = {
+  today: 77.5,
+  tomorrow: 79
+};
+
+function getTempOfTmrw(avgTemperatures) {
+  "use strict";
+  // change code below this line
+  const {tomorrow : tempOfTomorrow} = avgTemperatures // Destructes the value tomorrow in the object to a const
+  // change code above this line
+  return tempOfTomorrow;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+
+
+------------------
+
+const LOCAL_FORECAST = {
+  today: { min: 72, max: 83 },
+  tomorrow: { min: 73.3, max: 84.6 }
+};
+
+function getMaxOfTmrw(forecast) {
+  "use strict";
+  // change code below this line
+  const { tomorrow : { max: maxOfTomorrow }} = forecast // Destructs a nested object into an assignment 
+  // change code above this line
+  return maxOfTomorrow;
+}
+
+console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
+
+---------------
+
+let a = 8, b = 6;
+(() => {
+  "use strict";
+  // change code below this line
+ [a, b] = [6, 8]; // this worked, but below is better. 
+  // change code above this line
+})();
+console.log(a); // should be 6
+console.log(b); // should be 8
+
+--
+
+let a = 8, b = 6;
+(() => {
+  "use strict";
+  // change code below this line
+ [a, b] = [b, a]; // Destructuring Assignment to Assign Variables from Arrays
+  // change code above this line
+})();
+console.log(a); // should be 6
+console.log(b); // should be 8
+
+-------
+// Destructuring Assignment with the Rest Operator to Reassign Array Elements
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  "use strict";
+  // change code below this line
+  const [,,...arr] = list // the commas count out the first two values in the array.
+  // change code above this line
+  return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); // should be [3,4,5,6,7,8,9,10]
+console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
+
+------------
+
+//Destructuring Assignment to Pass an Object as a Function's Parameters
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+const half = (function() {
+  "use strict"; // do not change this line
+
+  // change code below this line
+  return function half({max, min}) {
+
+
+    // use function argument destructuring
+    return (stats.max + stats.min) / 2.0;
+  };
+  // change code above this line
+
+})();
+console.log(stats); // should be object
+console.log(half(stats)); // should be 28.015
+
+----------------
+
+// Create Strings using Template Literals. ${variable} 
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+
+  // change code below this line
+  const resultDisplayArray = arr.map(item => `<li class="text-warning">${item}</li>`);
+  // change code above this line
+
+  return resultDisplayArray;
+};
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`, 
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
+
+-------------
+// a simple way of writing object literals.
+
+const createPerson = (name, age, gender) => {
+  "use strict";
+  // change code below this line
+({name, age, gender});
+  // change code above this line
+};
+console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper object
+
+// OLD WAY (ES5) WOULD BE LIKE BELOW //
+
+const createPerson = (name, age, gender) => {
+  "use strict";
+  // change code below this line
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+  // change code above this line
+};
+console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper object
+
+------------
+// With ES6, You can remove the function keyword and colon altogether when defining functions in objects
+// change code below this line
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    "use strict";
+    this.gear = newGear;
+  }
+};
+// change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+
+------------
+
+function makeClass() {
+  "use strict";
+  /* Alter code below this line */
+class Vegetable {
+constructor(name) {
+
+  this.name = name;
+}
+
+}
+  /* Alter code above this line */
+  return Vegetable;
+}
+const Vegetable = makeClass();
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // => should be 'carrot'
+
+
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+-------------------- Regular expressions (regexes)  -----------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+// /words/ can be used to check for specific words in a string.
+
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString);
+// must match exactly the find true.
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /Waldo/; // Change this line
+let result = waldoRegex.test(waldoIsHiding);
+
+--------------
+
+// the OR operator can be used to search for more than one string value.
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; // Change this line
+let result = petRegex.test(petString);
+
+----------------
+// to ignore case when matching, append the 'i' to the end. Will match any form 
+let myString = "freeCodeCamp";
+let fccRegex = /freeCodeCamp/i; // Change this line
+let result = fccRegex.test(myString);
+
+----------------
+
+// extracts the word coding into a new variable.
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+
+
+----------------
+// appending 'g' at the end will find all iterations of the value, adding i also will ignore case.
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi; // Change this line
+let result = twinkleStar.match(starRegex); // Change this line
