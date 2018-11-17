@@ -7,8 +7,9 @@ function saveLanguage(e){
 
     var inputEnglish = document.getElementById("inputEnglish").value;
     var inputJapanese = document.getElementById("inputJapanese").value;
+    var inputComment = document.getElementById("inputComment").value;
 
-if(!inputEnglish || !inputJapanese) {
+if(!inputEnglish || !inputJapanese) { // removing || !inputComment - test
     alert("Please fill in form")
     return false;
 }
@@ -16,7 +17,8 @@ if(!inputEnglish || !inputJapanese) {
 
     var holder = {
     name: inputEnglish,
-    url: inputJapanese
+    url: inputJapanese,
+    com: inputComment
     }      
     // prevents form from submitting.
    
@@ -75,16 +77,35 @@ languageResults.innerHTML = '';
 for(var i = 0; i < gengo.length; i++){
     var name = gengo[i].name;
     var url = gengo[i].url;
+    var com = gengo[i].com; // ALSO PART OF TEST below
+//FROM HERE - TEST
+     if (com === "") {
 
-languageResults.innerHTML += '<div class="langBox">' + 
-                                '<h3 id="eng" class="card-header">' +name+ '</h3>' +
-                                 '<h3 id="jap" class="jap card-header">' +url+ '</h3>' +
-                                 '<div class="align-delete">' +
-                                 '<a onclick="deleteHolder(\''+url+'\')" id="delete" class="btn btn-danger">Delete</a>' +
-                                 '</div>' +
-                                 '</div>';
+        languageResults.innerHTML += '<div class="langBox">' + 
+        '<h3 id="eng" class="card-header">' +name+ '</h3>' +
+         '<h3 id="jap" class="jap card-header">' +url+ '</h3>' +
+         '<div class="align-delete">' +
+         '<a onclick="deleteHolder(\''+url+'\')" id="delete" class="btn btn-danger">Delete</a>' +
+         '</div>' +
+         '</div>';
 
-                              
+
+
+    } else {
+        languageResults.innerHTML += '<div class="langBox">' + 
+        '<h3 id="eng" class="card-header">' +name+ '</h3>' +
+         '<h3 id="jap" class="jap card-header">' +url+ '</h3>' +
+         '<h3 id="com" class="com card-header">' +com+ '</h3>' +
+         '<div class="align-delete">' +
+         '<a onclick="deleteHolder(\''+url+'\')" id="delete" class="btn btn-danger">Delete</a>' +
+         '</div>' +
+         '</div>';
+    } 
+// TO HERE
+
+
+
+                      
 
                                       
                                 }
