@@ -172,8 +172,25 @@ label {
 		<ul id="rand">
 			 <li><a class="term" onclick="">English</a> » <a class="trans" onclick="">Japanese</a></li>
 	</ul>
-        
-	</h2>
+  </h2>
+  
+<!-- 
+	document.getElementById("spin").onclick=function() {
+			el = document.getElementsByTagName("li");
+			count = 0;
+			for (var i=0; i<el.length; i++) {
+				if (el[i].getElementsByTagName("a").length > 0) {
+					count++;
+				}
+			}
+			document.getElementById("rand").getElementsByTagName("li")[0].innerHTML = el[Math.floor(Math.random() * count)].innerHTML;
+		};
+
+
+
+
+-->
+
 
 	<br>
 	<br>
@@ -1017,7 +1034,56 @@ label {
 	</h2>
     
 	<br>
-	<br>
+  <br>
+  
+	
+	<script>
+		document.getElementById("spin").onclick=function() {
+			el = document.getElementsByTagName("li");
+			count = 0;
+			for (var i=0; i<el.length; i++) {
+				if (el[i].getElementsByTagName("a").length > 0) {
+					count++;
+				}
+			}
+			document.getElementById("rand").getElementsByTagName("li")[0].innerHTML = el[Math.floor(Math.random() * count)].innerHTML;
+		};
+		
+		document.getElementById("dict-toggle").onclick=function() {
+			lb = document.getElementsByTagName("label")[0];
+			tmp = lb.getElementsByTagName("span")[0].innerHTML;
+			lb.getElementsByTagName("span")[0].innerHTML = lb.getElementsByTagName("span")[1].innerHTML;
+			lb.getElementsByTagName("span")[1].innerHTML = tmp;
+		
+			el = document.getElementsByTagName("li");
+			for (var i=0; i<el.length; i++) {
+				if (el[i].getElementsByTagName("a").length > 0) {
+					var tmp = el[i].getElementsByTagName("a")[0].innerHTML;
+					el[i].getElementsByTagName("a")[0].innerHTML = el[i].getElementsByTagName("a")[1].innerHTML;
+					el[i].getElementsByTagName("a")[1].innerHTML = tmp;
+				}
+			}
+		};
+
+	</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<!--<h1>Hiragana</h1>
 	<br>
 	<h2>
@@ -1240,37 +1306,3 @@ label {
 		</ul>
 	</h2>
 	-->
-	
-	<script>
-		document.getElementById("spin").onclick=function() {
-			el = document.getElementsByTagName("li");
-			count = 0;
-			for (var i=0; i<el.length; i++) {
-				if (el[i].getElementsByTagName("a").length > 0) {
-					count++;
-				}
-			}
-			document.getElementById("rand").getElementsByTagName("li")[0].innerHTML = el[Math.floor(Math.random() * count)].innerHTML;
-		};
-		
-		document.getElementById("dict-toggle").onclick=function() {
-			lb = document.getElementsByTagName("label")[0];
-			tmp = lb.getElementsByTagName("span")[0].innerHTML;
-			lb.getElementsByTagName("span")[0].innerHTML = lb.getElementsByTagName("span")[1].innerHTML;
-			lb.getElementsByTagName("span")[1].innerHTML = tmp;
-		
-			el = document.getElementsByTagName("li");
-			for (var i=0; i<el.length; i++) {
-				if (el[i].getElementsByTagName("a").length > 0) {
-					var tmp = el[i].getElementsByTagName("a")[0].innerHTML;
-					el[i].getElementsByTagName("a")[0].innerHTML = el[i].getElementsByTagName("a")[1].innerHTML;
-					el[i].getElementsByTagName("a")[1].innerHTML = tmp;
-				}
-			}
-		};
-
-	</script>
-
-
-</body>
-</html>

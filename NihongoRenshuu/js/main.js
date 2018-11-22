@@ -102,13 +102,28 @@ for(var i = 0; i < gengo.length; i++){
          '</div>';
     } 
 // TO HERE
-
-
-
-                      
-
                                       
                                 }
 
 };
+
+// TEST RANDOM FUNCTION START // 
+
+// button ID spin
+// ul ID rand 
+// li a CLASS term & trans
+
+document.getElementById("spin").onclick=function() {
+    el = document.getElementById('gengo');
+    count = 0;
+    for (var i=0; i<el.length; i++) {
+        if (el[i].length > 0) {
+            count++;
+        }
+    }
+    document.getElementById("rand").getElementById('languageResults')[0].innerHTML = el[Math.floor(Math.random() * count)].innerHTML;
+};
+
+// TEST RANDOM FUNCTION END // 
+
 
