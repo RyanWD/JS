@@ -1,0 +1,191 @@
+//
+Another way to target.
+
+[attr='value'] {
+    styles
+}
+
+
+//
+To style multiple selectors CSS variable
+
+--name-name: style  
+
+add to any selector 
+eg. body {
+style: var(--name-name)
+}
+
+//
+
+EG.
+  :root {
+--color-main: #09A7A1;
+--color-second: #FF790E;
+  }
+  
+  header {
+    background-color: var(--color-main);
+    color: white;
+    padding: 0.25em;
+  }
+
+//
+
+div {
+style: var(--name-name)
+}
+
+// 
+Adding a fallback value, incase css variable doesn't work
+
+eg. body {
+style: var(--name-name, FallbackStyle)
+}
+
+//
+Adding a standard style to the selector before is recommeneded as not all
+browsers support CSS variable
+
+eg. body {
+(basic fall back style here)
+style: var(--name-name, FallbackStyle)
+
+real eg.
+ background: red;
+    background: var(--red-color);
+}
+
+//
+:root is like css for the entire site, like html contains the body.
+it's good practice to declare the variable in root.
+
+  :root {
+    
+    --penguin-belly: pink
+   
+  }
+
+
+// 
+CSS can be overwritten at any point, even if defined in the root.
+
+//
+
+Using position: relative;
+
+allows you to move an element relative to its current position using top, right, left and bottom.
+Changing an element's position to relative does not remove it from the normal flow 
+- other elements around it still behave as if that item were in its default position.
+(it won't move nearby elements)
+
+eg.   h2 {
+    position: relative;
+    top: 25px;
+    
+  }
+
+offsetting an element using top,right,bottom, left REMEMBER top will push down, 
+left will push right etc.
+
+//
+
+transform: skewX(-32deg); skews the element at the x-axis (changes the shape)
+transform: skewY(-32deg); skews the element at the y-axis (changes the shape)
+
+//
+
+Keyframes eg. Declare animation name and duration - give keyframe properties.
+
+  #rect {
+    animation-name: rainbow;
+    animation-duration: 4s;
+    animation-fill-mode: forwards; // This keeps the style in its finished state (so it will end and stay yellow)
+  }
+  @keyframes rainbow {
+
+    0% {
+      background-color: blue;
+    }
+    50% {
+      background-color: green;
+    }
+    100% {
+      background-color: yellow;
+    }
+  }
+  
+  //
+
+  animation-iteration-count: infinite; // how many times it loops through the animation.
+
+  //
+
+  animation-timing-function: linear / ease-in / ease-out / ease
+  changes the pace of the object 
+
+  //
+
+  Responsive typology. 
+
+vw: 10vw would be 10% of the viewport's width.
+vh: 3vh would be 3% of the viewport's height.
+vmin: 70vmin would be 70% of the viewport's smaller dimension (height vs. width).
+vmax: 100vmax would be 100% of the viewport's bigger dimension (height vs. width).
+
+
+//
+
+display: flex 
+can change the direction of the flex, to row or column.
+
+flex-direction: flex-reverse;  // In this case the order of the objects are reveresed.
+flex-direction: row;
+flex-direction: column;
+
+//
+
+Justify-content: 
+
+justify-content: center;, which aligns all the flex items 
+to the center inside the flex container.
+
+flex-start: aligns items to the start of the flex container. 
+For a row, this pushes the items to the left of the container. 
+For a column, this pushes the items to the top of the container.
+
+flex-end: aligns items to the end of the flex container. 
+For a row, this pushes the items to the right of the container. 
+For a column, this pushes the items to the bottom of the container.
+
+space-between: aligns items to the center of the main axis, 
+with extra space placed between the items. 
+The first and last items are pushed to the very edge of the flex container. 
+For example, in a row the first item is against the left side of the container, 
+the last item is against the right side of the container, 
+then the other items between them are spaced evenly.
+
+space-around: similar to space-between but the first and last items are not locked 
+to the edges of the container, the space is distributed around all the items
+
+//
+
+align-items: 
+
+flex-start: aligns items to the start of the flex container. 
+For rows, this aligns items to the top of the container. 
+For columns, this aligns items to the left of the container.
+
+flex-end: aligns items to the end of the flex container. 
+For rows, this aligns items to the bottom of the container. 
+For columns, this aligns items to the right of the container.
+
+center: align items to the center. For rows, this vertically aligns items 
+(equal space above and below the items). For columns, this horizontally aligns them
+ (equal space to the left and right of the items).
+
+stretch: stretch the items to fill the flex container. 
+For example, rows items are stretched to fill the flex container top-to-bottom.
+
+baseline: align items to their baselines. 
+Baseline is a text concept, think of it as the line that the letters sit on.
