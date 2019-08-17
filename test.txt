@@ -1,9 +1,23 @@
-Notes:
+gitNotes:
 
 Git commands (all without brackets)
 
+git config --list // SHOWS ALL GITHUB INFORMATION , USER, CURRENT REPO ETC.
+
+Pull latest repository files overwriting any local changes
+
+git checkout -f (branch) - force checkout, discard local changes to current branch!!
+
+git checkout -b crawler origin/crawler
+
+
+git fetch --all
+git reset --hard origin/master
+git reset --hard origin/<branch_name> (if you're on a different branch) 
+
 Sending files
 Git add (file name)
+Git commit -a (all files)
 Git commit (-m 'message')
 Git push 
 
@@ -15,6 +29,17 @@ Git checkout -b (name) // creates branch and switches to that branch
 
 Git branch -d (name) // deletes branch aslong as it's merged 
 Git branch -D (name) // deletes without merge
+
+Merging updates before pull request.
+(eg below 'master' can be any branch, just main branch / feature is also random branch name)
+1.Go to master branch with: git checkout master
+2.Update your local master with: git pull origin master
+Resolve conflicts (if applicable)
+3.Go back to features with: git checkout features
+4.Merge master branch over features with: git merge master
+5.Push changes with: git push origin features
+
+Now, you have to create a new pull request from features to master. Done!
 
 Changing repository 
 Open folder in editor
